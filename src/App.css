@@ -43,3 +43,8 @@
   margin: 0 5%;
   font-size: 1.75rem;
 }
+
+h1 {
+  text-align: center;
+  padding: 1rem 0;
+}

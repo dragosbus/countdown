@@ -23,7 +23,6 @@ class App extends Component {
     this.setState({
       date: miliDif
     });
-    console.log(miliDif)
   }
 
   decrementCounter() {
@@ -38,6 +37,7 @@ class App extends Component {
     
     return (
       <div className="app">
+        <h1>Select a date</h1>
        <Form setDate={this.countdown}/>
        <Timer date={this.state.date}/>
       </div>
