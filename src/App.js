@@ -12,10 +12,6 @@ class App extends Component {
     this.countdown = this.countdown.bind(this);
   }
 
-  componentDidUpdate() {
-    this.decrementCounter()
-  }
-
   countdown(dateValue) {
     let now = Date.now();
     let dateValueMili = Date.parse(new Date(dateValue));
@@ -26,7 +22,7 @@ class App extends Component {
   }
 
   decrementCounter() {
-    setTimeout(()=>{
+    setInterval(()=>{
       this.setState({
         date: this.state.date - 1000
       });
