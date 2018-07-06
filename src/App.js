@@ -7,37 +7,39 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seconds: 0,
-      minutes: 0,
-      hours: 0,
-      days: 0,
       date: 0
     }
-    this.coundown = this.coundown.bind(this);
+    this.countdown = this.countdown.bind(this);
   }
 
-  componentWillMount() {
-    this.coundown()
+  componentDidUpdate() {
+    this.decrementCounter()
   }
 
-  coundown(dateValue) {
+  countdown(dateValue) {
     let now = Date.now();
     let dateValueMili = Date.parse(new Date(dateValue));
-    
-    console.log(dateValueMili - now)
+    let miliDif = dateValueMili - now;
+    this.setState({
+      date: miliDif
+    });
+    console.log(miliDif)
+  }
+
+  decrementCounter() {
+    setTimeout(()=>{
+      this.setState({
+        date: this.state.date - 1000
+      });
+    },1000);
   }
 
   render() {
-    let {days, hours, minutes, seconds} = this.state;
+    
     return (
       <div className="app">
-       <Form setDate={this.coundown}/>
-       <Timer
-        days={days}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-       />
+       <Form setDate={this.countdown}/>
+       <Timer date={this.state.date}/>
       </div>
     );
   }
