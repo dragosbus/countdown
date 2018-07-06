@@ -1,5 +1,51 @@
-body {
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*,*::after,*::before{
+  box-sizing: inherit;
+}
+
+* {
   margin: 0;
   padding: 0;
+}
+
+body {
   font-family: sans-serif;
+}
+
+.add-form {
+  width: 100%;
+}
+
+.add-form input {
+  display: block;
+  width: 90%;
+  margin: 1rem auto;
+  border: none;
+  box-shadow: 0 0 8px rgba(2,2,2,0.3);
+  border-radius: 5px;
+  height: 3.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.add-form button {
+  display: block;
+  margin: 1rem auto;
+  border: none;
+  background: rgb(46, 197, 84);
+  color: #fff;
+  padding: 0.8rem 2.5rem;
+  border-radius: 5px;
+  font-size: 1.55rem;
+  cursor: pointer;
+  transition: background 0.45s ease-in;
+}
+
+.add-form button:hover {
+  background: rgb(18, 161, 49);
 }
