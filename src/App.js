@@ -29,6 +29,10 @@ class App extends Component {
     },1000);
   }
 
+  componentDidMount() {
+    this.decrementCounter();
+  }
+
   render() {
     
     return (
