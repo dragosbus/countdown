@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 export const Timer = props =>{
     return(
         <div className="timer">
-            <p>{props.days}</p>
-            <p>{props.hours}</p>
-            <p>{props.minutes}</p>
-            <p>{props.seconds}</p>
+            <p>{props.days} days</p>
+            <p>{props.hours} hours</p>
+            <p>{props.minutes} min</p>
+            <p>{props.seconds} sec</p>
         </div>
     );
 };
